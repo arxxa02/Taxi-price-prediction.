@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi Fare Prediction</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS -->
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Taxi Fare Prediction</h1>
+            <p>Estimate your taxi fare based on trip details</p>
+        </header>
+        <form id="fareForm">
+            <!-- Trip Details Section -->
+            <div class="form-group">
+                <label for="distance">Trip Distance (km):</label>
+                <input type="number" id="distance" name="distance" step="0.01" placeholder="e.g., 10.5" required>
+            </div>
+
+            <div class="form-group">
+                <label for="timeOfDay">Time of Day:</label>
+                <select id="timeOfDay" name="timeOfDay" required>
+                    <option value="">-- Select Time of Day --</option>
+                    <option value="0">Morning</option>
+                    <option value="1">Afternoon</option>
+                    <option value="2">Evening</option>
+                    <option value="3">Night</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="dayOfWeek">Day of Week:</label>
+                <select id="dayOfWeek" name="dayOfWeek" required>
+                    <option value="">-- Select Day --</option>
+                    <option value="0">Monday</option>
+                    <option value="1">Tuesday</option>
+                    <option value="2">Wednesday</option>
+                    <option value="3">Thursday</option>
+                    <option value="4">Friday</option>
+                    <option value="5">Saturday</option>
+                    <option value="6">Sunday</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="passengers">Passenger Count:</label>
+                <input type="number" id="passengers" name="passengers" min="1" max="10" placeholder="e.g., 2" required>
+            </div>
+
+            <!-- Environment Details Section -->
+            <div class="form-group">
+                <label for="traffic">Traffic Conditions:</label>
+                <select id="traffic" name="traffic" required>
+                    <option value="">-- Select Traffic Condition --</option>
+                    <option value="0">Low</option>
+                    <option value="1">Moderate</option>
+                    <option value="2">High</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="weather">Weather:</label>
+                <select id="weather" name="weather" required>
+                    <option value="">-- Select Weather Condition --</option>
+                    <option value="0">Clear</option>
+                    <option value="1">Rainy</option>
+                    <option value="2">Snowy</option>
+                </select>
+            </div>
+
+            <!-- Fare Details Section -->
+            <div class="form-group">
+                <label for="baseFare">Base Fare ($):</label>
+                <input type="number" id="baseFare" name="baseFare" step="0.01" placeholder="e.g., 50" required>
+            </div>
+
+            <div class="form-group">
+                <label for="perKmRate">Rate per Km ($):</label>
+                <input type="number" id="perKmRate" name="perKmRate" step="0.01" placeholder="e.g., 15" required>
+            </div>
+
+            <div class="form-group">
+                <label for="perMinuteRate">Rate per Minute ($):</label>
+                <input type="number" id="perMinuteRate" name="perMinuteRate" step="0.01" placeholder="e.g., 2" required>
+            </div>
+
+            <div class="form-group">
+                <label for="duration">Trip Duration (minutes):</label>
+                <input type="number" id="duration" name="duration" placeholder="e.g., 30" required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn">Predict Fare</button>
+        </form>
+
+        <!-- Output Section -->
+        <div id="output" class="output"></div>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to JS -->
+</body>
+</html>
